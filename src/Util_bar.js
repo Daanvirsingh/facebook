@@ -8,12 +8,20 @@ export default class Util_bar extends Component {
             counter: 0
         }
     }
+
+    increment= ()=>{
+        this.setState({
+            counter:this.state.counter +1
+        })
+    }
     
     render() {
         return (
             <div className="row">
                 <div className="col-lg-1">
-                    <button className="btn btn-primary" onClick="">LIKE</button>
+                    <button type="button" class="glyphicon glyphicon-thumbs-up" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">LIKE</span>
+                    </button>
                 </div>
                 <div className="col-lg-2">
                     <label>Add Comment</label>
@@ -22,7 +30,7 @@ export default class Util_bar extends Component {
                     <input type="text" placeholder="enter comment"></input>
                 </div>
                 <div className="col-lg-3">
-                    <button className="btn btn-default" onClick="">View Comments</button>
+                    <button className="btn btn-default">View Comments</button>
                 </div>
                 
             </div>

@@ -1,15 +1,20 @@
 import React, { Component } from "react";
-
+import Util_bar from './Util_bar';
 
 class PostsItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      
     };
   }
-
   
+  time= ()=>{
+    const d = new Date();
+    const t=Date.parse(d);
+    return `${((t-this.props.postitem.id-(t-this.props.postitem.id)%60000))/6000} minutes ago`;
+  }
+
   render() {
     return (
       <div class="row">
@@ -20,7 +25,7 @@ class PostsItem extends Component {
         </div>
         <div class="col-sm-2">
           <span class="label label-default label-arrow label-arrow-right pull-right">
-            1 Hour Ago
+            {this.time()}
           </span>
         </div>
         <div class="col-sm-10">
@@ -31,7 +36,7 @@ class PostsItem extends Component {
             <span class="label label-warning">responsive</span>
           </div>
           <p>
-            <button class="btn btn-default">More</button>
+            <Util_bar />
           </p>
         </div>
       </div>

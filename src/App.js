@@ -11,17 +11,19 @@ class App extends Component {
     };
   }
 
-  addPost = (t,p) => {
-    const record={title: t, post: p};
+  addPost = (title,post) => {
+    const d= new Date();
+    const id=Date.parse(d);
+    const record={id,title, post};
     this.setState({
-      input: [...this.state.input,record]
+      input: [record,...this.state.input]
     })
     
   };
 
   deletePost= (id) =>{
     let temp=this.state.input.filter((post)=>{
-      return post.id===id
+      return post.id!==id
     }) 
     this.setState({
       input:temp
