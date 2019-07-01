@@ -21,7 +21,7 @@ class AddComments extends Component {
         const { addComment } = this.props;
         const { comment} = this.state;
     
-        addComment(comment)
+        addComment(comment,this.props.id)
         this.setState({
           comment: ""
         });

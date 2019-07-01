@@ -11,31 +11,22 @@ export default class UtilBar extends Component {
       comment: []
     };
   }
-  addComment = comment => {
- 
-    this.setState({
-      counter: 0,
-      comment: [comment, ...this.state.comment]
-    });
-  };
+  
   counter = () => {
-    this.setState({
-      counter: this.state.counter + 1
-    });
-    this.props.likes(this.state.counter)
-  };
+    this.props.likes(this.props.id)
+    };
 
   render() {
     return (
       <div className="row">
         <div className="col-lg-2">
           <button className="btn btn-sm btn-info" onClick={this.counter}>
-            {this.state.counter} LIKES
+            {this.props.counter} LIKES
           </button>
         </div>
 
-        <AddComments addComment={this.addComment} />
-        <Comment comment={this.state.comment} />
+        <AddComments addComment={this.props.addComment} id={this.props.id} />
+        <Comment comment={this.props.comment} id={this.props.id}/>
       </div>
     );
   }

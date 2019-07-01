@@ -40,5 +40,6 @@
   "bugs": {
     "url": "https://github.com/Daanvirsingh/facebook/issues"
   },
-  "homepage": "https://github.com/Daanvirsingh/facebook#readme"
+  "homepage": "https://github.com/Daanvirsingh/facebook#readme",
+  "devDependencies": {}
 }
